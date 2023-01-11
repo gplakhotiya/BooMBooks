@@ -1,0 +1,15 @@
+<form>
+    <div class="form-group">
+        <input type="text" class="form-control" #title placeholder="Book Name" [(ngModel)]="Title">
+    </div>
+    <div class="form-group">
+        <br>
+        <input type="text" class="form-control" #author placeholder="Author" [(ngModel)]="Author">
+    </div>
+    <div class="form-group">
+        <br>
+        <input type="text" class="form-control" #publisher placeholder="Publisher" [(ngModel)]="Publisher">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary mb-2" (click)="create()">submit</button>
+</form>

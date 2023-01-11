@@ -1,0 +1,150 @@
+<section>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="navbar-nav nav-tabs">
+            <li class="nav-item active">
+                <H3>Govind Prasad</H3>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">github</a>
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-floating" (click)="changeflag()">Add Book</button>
+            </li>
+        </ul>
+    </nav>
+</section>
+<div class="container">
+
+    <div class="row height d-flex justify-content-center align-items-center">
+
+        <div class="col-md-6">
+
+            <div class="form">
+                <i class="fa fa-search"></i>
+                <input type="text" [(ngModel)]="Data" (keyup)="sendData()" class="form-control form-input"
+                    placeholder="Search Books...">
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<app-create *ngIf="flag==true && Data==''" (CreateNode)="changeflag()">
+    <!-- 
+    {{CreateNode.Title}}
+    {{CreateNode.Author}} -->
+</app-create>
+
+<section class="tab" [hidden]="Data==''">
+    <div>
+        <table class="table table-striped table-hover table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Air</td>
+                    <td>Au</td>
+                    <td>jindal</td>
+                    <td>
+                        <button class=" btn btn-primary" (onclick)="update()">Update</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" (onclick)="delete()">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Air</td>
+                    <td>Au</td>
+                    <td>jindal</td>
+                    <td>
+                        <button class=" btn btn-primary" onclick="">Update</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" (onclick)="delete()" [attr.id]="5">Delete</button>
+                    </td>
+                </tr>
+
+
+                <!-- <tr *ngFor="let data in myData" [attr.id]=" data.Title">
+                    <td>{{data.Title}}</td>
+                    <td>{{data.Author}}</td>
+                    <td>{{data.Publisher}}</td>
+                    <td>
+                        <button class=" btn btn-primary" onclick="">Update</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary">Delete</button>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<div class="container my-5 relative-bottom">
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style=" background-color: #929fba">
+        <div class="container p-4 pb-0">
+
+            <section class="">
+                <div class="row">
+
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            BooMBooks
+                        </h6>
+                        <p>
+                            Thank you
+                        </p>
+                    </div>
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                        <p>
+                            <a class="text-white">Search</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Update</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Delete</a>
+                        </p>
+
+                    </div>
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                        <p><i class="fas fa-home mr-3"></i> </p>
+                        <p><i class="fas fa-envelope mr-3"></i> gplakhotiya9024@gmail.com</p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+                        <!-- Linkedin -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #b4c3ca" href="#!"
+                            role="button"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- Github -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!"
+                            role="button"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+</div>
